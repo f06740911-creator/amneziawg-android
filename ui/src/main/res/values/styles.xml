@@ -3,12 +3,15 @@
 
     <style name="AmneziaWgTheme.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="android:background">?attr/colorSurface</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Material3.TitleLarge</item>
     </style>
 
     <style name="AppThemeBase" parent="AmneziaWgTheme">
         <item name="materialCardViewStyle">@style/AmneziaWgTheme.MaterialCardView</item>
         <item name="toolbarStyle">@style/AmneziaWgTheme.Toolbar</item>
         <item name="bottomSheetDialogTheme">@style/AmneziaWgTheme.BottomSheetDialog</item>
+        <item name="floatingActionButtonStyle">@style/AmneziaWgTheme.Fab</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.AmneziaWg.Small</item>
         <item name="android:statusBarColor">@null</item>
     </style>
 
@@ -20,9 +23,32 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AmneziaWgTheme.MaterialCardView" parent="Widget.Material3.CardView.Elevated">
-        <item name="cornerRadius">4dp</item>
-        <item name="contentPadding">8dp</item>
+    <!-- Cards: flat, large radius, hairline border -->
+    <style name="AmneziaWgTheme.MaterialCardView" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.AmneziaWg.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.AmneziaWg.Fab" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="AmneziaWgTheme.Fab" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.AmneziaWg.Fab</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorOnPrimary</item>
+        <item name="elevation">3dp</item>
+        <item name="borderWidth">0dp</item>
     </style>
 
     <style name="AmneziaWgTheme.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
