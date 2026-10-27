@@ -41,4 +41,9 @@
         android:summaryOff="@string/allow_remote_control_intents_summary_off"
         android:summaryOn="@string/allow_remote_control_intents_summary_on"
         android:title="@string/allow_remote_control_intents_title" />
+    <Preference
+        android:key="design_development"
+        android:selectable="false"
+        android:summary="@string/design_dev_name"
+        android:title="@string/design_dev_title" />
 </androidx.preference.PreferenceScreen>
