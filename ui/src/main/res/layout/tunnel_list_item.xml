@@ -36,8 +36,9 @@
         android:descendantFocusability="beforeDescendants"
         android:focusable="true"
         android:nextFocusRight="@+id/tunnel_switch"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:minHeight="76dp"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="20dp">
 
         <LinearLayout
             android:id="@+id/tunnel_info_layout"
@@ -55,19 +56,19 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@{key}"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 tools:text="@sample/interface_names.json/names/names/name" />
 
             <TextView
                 android:id="@+id/tunnel_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="4dp"
                 android:text="@{item.connectionStatus == ConnectionStatus.CONNECTED ? @string/tunnel_status_connected : @string/tunnel_status_connecting}"
                 android:textAppearance="?attr/textAppearanceBodySmall"
                 android:textColor="@{item.connectionStatus == ConnectionStatus.CONNECTED ? @color/tunnel_status_connected : @color/tunnel_status_connecting}"
                 android:visibility="@{item.connectionStatus == ConnectionStatus.DISCONNECTED ? android.view.View.GONE : android.view.View.VISIBLE}"
-                tools:text="Подключено"
+                tools:text="Connected"
                 tools:textColor="@color/tunnel_status_connected" />
         </LinearLayout>
 
