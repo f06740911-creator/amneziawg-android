@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Status colors for dark theme -->
-    <color name="tunnel_status_connected">#66BB6A</color>
-    <color name="tunnel_status_connecting">#FFB74D</color>
-    <color name="tunnel_status_disconnected">#EF5350</color>
+    <color name="tunnel_status_connected">#5FD3A6</color>
+    <color name="tunnel_status_connecting">#F0B955</color>
+    <color name="tunnel_status_disconnected">#8C89A0</color>
 </resources>
-
