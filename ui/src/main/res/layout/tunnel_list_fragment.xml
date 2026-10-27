@@ -34,7 +34,8 @@
             android:clipToPadding="false"
             android:nextFocusDown="@id/create_fab"
             android:nextFocusForward="@id/create_fab"
-            android:paddingBottom="@{@dimen/design_fab_size_normal * 1.1f}"
+            android:paddingTop="8dp"
+            android:paddingBottom="@{@dimen/design_fab_size_normal * 1.6f}"
             android:visibility="@{tunnels.size() > 0 ? android.view.View.VISIBLE : android.view.View.GONE}"
             app:configurationHandler="@{rowConfigurationHandler}"
             app:items="@{tunnels}"
@@ -46,27 +47,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:visibility="@{tunnels.size() == 0 ? android.view.View.VISIBLE : android.view.View.GONE}"
             tools:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/logo_placeholder"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:alpha="0.3333333"
-                android:src="@drawable/ic_icon" />
+                android:layout_marginBottom="28dp"
+                android:alpha="0.85"
+                android:src="@drawable/ic_icon"
+                app:tint="?attr/colorPrimary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/tunnel_list_placeholder_margin"
-                android:layout_marginEnd="@dimen/tunnel_list_placeholder_margin"
+                android:text="@string/tunnel_list_empty_title"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:gravity="center"
                 android:text="@string/tunnel_list_placeholder"
-                android:textSize="20sp" />
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="28dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="@{tunnels.size() == 0 ? android.view.View.VISIBLE : android.view.View.GONE}"
+            tools:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/design_dev_title"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="?attr/colorOutline" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/design_dev_name"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorPrimary" />
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -74,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_margin="20dp"
             android:nextFocusUp="@id/tunnel_list"
             app:srcCompat="@drawable/ic_action_add_white" />
 
